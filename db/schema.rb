@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2020_07_02_120526) do
     t.text "descriptor"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "description"
   end
 
   create_table "taggings", id: :serial, force: :cascade do |t|

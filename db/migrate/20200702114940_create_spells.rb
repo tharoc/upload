@@ -5,7 +5,7 @@ class CreateSpells < ActiveRecord::Migration[6.0]
       t.string :school
       t.string :subschool
       t.text :descriptor
-
+      t.string :description
       t.timestamps
     end
   end

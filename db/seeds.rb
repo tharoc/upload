@@ -5,13 +5,18 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-require 'csv'
+require 'json'
 require 'open-uri'
+url = "https://raw.githubusercontent.com/tharoc/upload/master/public/spells.json"
 
 Spell.delete_all if Rails.env.development?
 
-spells = CSV.read('D:\my shit\various school shit\COSC 630\project\rails\my_project\public\spells.csv')
+spells = JSON.parse(open(url).read)
 
 spells.each do |spell|
-    Spell.create!(name: spell["name"], school_list: spell["school"], subschool_list: spell["subschool"],descriptor_list: spell["descriptor"],description: spell["description"])
+    Spell.create!(name: spell["name"], 
+    school_list: spell["school"], 
+    subschool_list: spell["subschool"],
+    descriptor_list: spell["descriptor"],
+    description: spell["description"])
   end
