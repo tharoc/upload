@@ -1,0 +1,15 @@
+<% spells.each do |spell| %>
+  <div id="spell">
+    <h3><%= spell.name %></h3>
+    <p><%= spell.description %></p>
+    <button class="btn-primary">
+      <%= spell.school_list %>
+    </button>
+    <button class="btn-primary">
+      <%= spell.subschool_list %>
+    </button>
+    <button class="btn-primary">
+      <%= spell.descriptor_list %>
+    </button>
+  </div>
+<% end %>

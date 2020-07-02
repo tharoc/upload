@@ -1,0 +1,12 @@
+function replaceSpells (innerHTML) {
+  const spells = document.getElementById('spells');
+  spells.innerHTML = innerHTML;
+}
+
+
+if ('<%= @filter %>' === "[]") {
+replaceSpells("<%= j render 'spell', spells: Spell.all %>");
+}
+else {
+replaceSpells("<%= j render 'spell', spells: @spells %>");
+}
