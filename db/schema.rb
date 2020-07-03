@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2020_07_02_120526) do
     t.string "name"
     t.string "school"
     t.string "subschool"
-    t.text "descriptor"
+    t.string "descriptor"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "description"
